@@ -44,6 +44,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "driver.h"
 #endif
 
+#include <stdio.h>
+
 #if MQTT_ENABLE
 
 #include <assert.h>
@@ -181,6 +183,7 @@ bool mqtt_publish_message (const char *topic, const void *payload, size_t payloa
 
 bool mqtt_connect (mqtt_settings_t *settings, const char *client_id)
 {
+    pintf("we are around boy \n");
     cfg = settings;
     client_info.client_id = client_id;
     client_info.client_user = cfg->user;
